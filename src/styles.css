@@ -1,0 +1,69 @@
+body {
+  padding-top: 40px;
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+}
+.btn-warning {
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: "Courgette", cursive;
+}
+h2 {
+  color: #e028c1;
+}
+.fa-temperature-high {
+  color: orange;
+  padding-right: 10px;
+}
+.fa-temperature-low {
+  color: blue;
+  padding-right: 10px;
+}
+.fa-wind {
+  color: grey;
+  position: relative;
+  left: 10px;
+}
+.fa-sun {
+  font-size: 40px;
+  color: #ee8417;
+  position: relative;
+  left: 12px;
+}
+.fa-cloud-sun-rain {
+  font-size: 40px;
+  color: blue;
+  position: relative;
+  left: 12px;
+}
+
+.fa-cloud {
+  font-size: 40px;
+  color: grey;
+  position: relative;
+  left: 12px;
+}
+
+.fa-cloud-sun {
+  font-size: 40px;
+  position: relative;
+  left: 12px;
+}
+.card-title {
+  font-family: "Courgette", cursive;
+  text-align: center;
+}
+.card-text {
+  text-align: center;
+}
+.container {
+  max-width: 850px;
+}
+.temperature {
+  font-size: 40px;
+}
+.units {
+  position: relative;
+  top: -20px;
+}

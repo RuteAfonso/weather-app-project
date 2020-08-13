@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+
+    <script src="https://kit.fontawesome.com/a77750445d.js">
+        crossorigin = "anonymous"</script>
+
+    <link href="src/styles.css" />
+</head>
+
+<body>
+    <div id="app"></div>
+    <div class="container">
+        <div class="card">
+            <div class="body">
+                <div class="shadow p-3 mb-5 bg-white rounded">
+
+
+                    <h1>
+                        Fri, Jul 31
+                        <br>
+                        15:00
+                        </br />
+                    </h1>
+
+                    <br />
+
+                    <form id="search-form">
+                        <input type="text" placeholder="Enter city" autofocus id="search-for-city" />
+
+                        <input type="submit" value="🔎Search" class="btn btn-warning" />
+
+                        <button id="current-location-button">
+                            📍Current Location</button>
+                    </form>
+
+                    <h2 id="city">
+                        Lisbon
+                    </h2>
+                    <img src="src/images/sunny.jpg" alt="" />
+
+                    <span class="temperature" id="change">32</span>
+                    <span class="units">
+                        <a href="#" id="celsius-link">ºC </a> |
+                        <a href="#" id="fahrenheit-link">ºF </a>
+                    </span>
+                    <p>Sunrise 07:00 Sunset 20:50</p>
+
+                    <hr />
+                    <i class="fas fa-temperature-high">
+                        Max. 34ºC
+                    </i>
+                    <i class="fas fa-temperature-low">
+                        Min. 26ºC
+                    </i>
+                    <i class="fas fa-wind">
+                        Wind: 5km/h
+                    </i>
+
+                    <hr />
+
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="card" style="width: 7rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">TUE</h5>
+                                    <p class="card-text">30ºC 32ºC</p>
+                                    <i class="fas fa-cloud-sun"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col">
+                            <div class="card" style="width: 7rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">WED</h5>
+                                    <p class="card-text">36ºC 40ºC</p>
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col">
+                            <div class="card" style="width: 7rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">THU</h5>
+                                    <p class="card-text">32ºC 38ºC</p>
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col">
+                            <div class="card" style="width: 7rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">FRI</h5>
+                                    <p class="card-text">25ºC 30ºC</p>
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col">
+                            <div class="card" style="width: 7rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">SAT</h5>
+                                    <p class="card-text">30ºC 35ºC</p>
+                                    <i class="fas fa-cloud-sun-rain"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col">
+                            <div class="card" style="width: 7rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">SUN</h5>
+                                    <p class="card-text">30ºC 36ºC</p>
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <script src="src/index.js"></script>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
