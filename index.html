@@ -28,7 +28,7 @@ href="src/styles.css" />
                 <div class="shadow p-3 mb-0 bg-white rounded">
 
 
-                    <h1>
+                    <h1 id="date">
                         Fri, Jul 31
                         <br>
                         15:00
@@ -49,25 +49,42 @@ href="src/styles.css" />
                     <h2 id="city">
                         Lisbon
                     </h2>
-                    <img src="src/images/sunny.jpg" alt="" />
+                    
+                    <p id="description"
+                    class="capitalize"
+                    Sunny</p>
+                    <div class="clearfix">
+                    <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" 
+                    alt="sunny"
+                    class="float-left"/>
 
-                    <span class="temperature" id="change">32</span>
-                    <span class="units">
-                        <a href="#" id="celsius-link">ºC </a> |
-                        <a href="#" id="fahrenheit-link">ºF </a>
+                    <span class="temperature" id="change">30</span>
+                    <span class="units">ºC |
+                       <a href="#">ºF </a>
                     </span>
-                    <p>Sunrise 07:00 Sunset 20:50</p>
+                    <div>
+                    <span id="rise">
+                    Sunrise 07:00 
+                    
+                    <span id="set">
+                        Sunset 20:50
+                    </div>
 
                     <hr />
                     <i class="fas fa-temperature-high">
-                        Max. 34ºC
+                        Max. <span id="max"> </span> ºC
                     </i>
+                    
                     <i class="fas fa-temperature-low">
-                        Min. 26ºC
+                        Min. <span id="min"> </span> ºC
                     </i>
+                    
                     <i class="fas fa-wind">
-                        Wind: 5km/h
+                        Wind: <span id="wind"> </span> km/h
                     </i>
+
+                    <i class="fas fa-tint"></i>
+                    Humidity: <span id="humidity"></span>%
 
                     <hr />
 

@@ -37,6 +37,18 @@ function showUpdatedTemperature(response) {
   document.querySelector("#change").innerHTML = Math.round(
     response.data.main.temp
   );
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let maxElement = document.querySelector("#max");
+  let minElement = document.querySelector("#min");
+  let sunriseElement = document.querySelector("#rise");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = response.data.wind.speed;
+  maxElement.innerHTML = Math.round(response.data.main.temp_max);
+  minElement.innerHTML = Math.round(response.data.main.temp_min);
+  sunriseElement.innerHTML = Math.round(response.data.sunrise);
 }
 
 function searchCity(city) {
