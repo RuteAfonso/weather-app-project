@@ -19,7 +19,13 @@ let months = [
 
 let date = present.getDate();
 let hours = present.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = present.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let day = days[present.getDay()];
 let month = months[present.getMonth()];
 
