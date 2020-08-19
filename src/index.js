@@ -33,6 +33,7 @@ let h1 = document.querySelector("h1");
 h1.innerHTML = `${day},${month} ${date} ${hours}:${minutes}`;
 
 function showUpdatedTemperature(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#change").innerHTML = Math.round(
     response.data.main.temp
@@ -43,12 +44,19 @@ function showUpdatedTemperature(response) {
   let maxElement = document.querySelector("#max");
   let minElement = document.querySelector("#min");
   let sunriseElement = document.querySelector("#rise");
+  let iconElement = document.querySelector("#icon");
+
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
   minElement.innerHTML = Math.round(response.data.main.temp_min);
   sunriseElement.innerHTML = Math.round(response.data.sunrise);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
