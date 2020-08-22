@@ -81,3 +81,10 @@ h2 {
 .capitalize {
   text-transform: capitalize;
 }
+.clearfix .active {
+  color: black;
+  cursor: default;
+}
+.clearfix .active:hover {
+  text-decoration: none;
+}
