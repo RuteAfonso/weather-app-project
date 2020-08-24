@@ -1,36 +1,25 @@
-let present = new Date();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
 
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-let months = [
-  "Jan",
-  "Fev",
-  "March",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+  let day = days[date.getDay()];
 
-let date = present.getDate();
-let hours = present.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+  return `${day} ${formatHours(timestamp)}`;
 }
-let minutes = present.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let day = days[present.getDay()];
-let month = months[present.getMonth()];
 
-let h1 = document.querySelector("h1");
-h1.innerHTML = `${day},${month} ${date} ${hours}:${minutes}`;
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
 
 function showUpdatedTemperature(response) {
   console.log(response.data);
@@ -42,7 +31,7 @@ function showUpdatedTemperature(response) {
   let windElement = document.querySelector("#wind");
   let maxElement = document.querySelector("#max");
   let minElement = document.querySelector("#min");
-  let sunriseElement = document.querySelector("#rise");
+  let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
@@ -52,12 +41,38 @@ function showUpdatedTemperature(response) {
   windElement.innerHTML = response.data.wind.speed;
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
   minElement.innerHTML = Math.round(response.data.main.temp_min);
-  sunriseElement.innerHTML = Math.round(response.data.sunrise);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col">
+    <div class="card" style="width: 7rem;">
+      <div class= "card-body">
+      <h5 class="card-title">${formatHours(forecast.dt * 1000)}</h5>
+      <img src="http://openweathermap.org/img/wn/${
+        forecast.weather[0].icon
+      }@2x.png"
+      alt=""
+      />
+      <p class="card-text"><strong>${Math.round(
+        forecast.main.temp_max
+      )}ºC</strong> ${Math.round(forecast.main.temp_min)}ºC</p>
+      
+    </div>
+        </div>
+         </div>`;
+  }
 }
 
 function searchCity(city) {
@@ -66,6 +81,9 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showUpdatedTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleInput(event) {

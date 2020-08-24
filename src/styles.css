@@ -3,11 +3,12 @@ body {
   margin-top: 40px;
 }
 .btn-warning {
-  border-radius: 15px;
+  border-radius: 20px;
   margin-bottom: 10px;
 }
 h1 {
   font-family: "Courgette", cursive;
+  font-size: 20px;
 }
 h2 {
   color: #e02884;
@@ -25,6 +26,7 @@ h2 {
   position: relative;
   left: 10px;
 }
+
 .fa-sun {
   font-size: 40px;
   color: #ee8417;
@@ -50,9 +52,10 @@ h2 {
   position: relative;
   left: 12px;
 }
+
 .fa-tint {
   position: relative;
-  left: 5px;
+  left: 20px;
 }
 .card-title {
   font-family: "Courgette", cursive;
@@ -87,4 +90,8 @@ h2 {
 }
 .clearfix .active:hover {
   text-decoration: none;
+}
+img {
+  height: 70px;
+  width: 70px;
 }
