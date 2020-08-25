@@ -64,6 +64,9 @@ h2 {
 .card-text {
   text-align: center;
 }
+.card {
+  background-color: lightblue;
+}
 .container {
   max-width: 850px;
 }
@@ -76,7 +79,7 @@ h2 {
 }
 .card {
   border: 1px solid;
-  color: #e02884;
+  color: black;
 }
 .source-code {
   text-align: center;

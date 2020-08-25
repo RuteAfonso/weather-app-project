@@ -22,9 +22,8 @@ function formatHours(timestamp) {
 }
 
 function showUpdatedTemperature(response) {
-  console.log(response.data);
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#change").innerHTML = Math.round(celsiusTemperature);
+  let cityElement = document.querySelector("#city");
+  let temperatureElement = document.querySelector("#change");
 
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -35,6 +34,9 @@ function showUpdatedTemperature(response) {
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
+
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -48,6 +50,7 @@ function showUpdatedTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
@@ -71,12 +74,12 @@ function displayForecast(response) {
       
     </div>
         </div>
-         </div>`;
+         </div>
+         `;
   }
 }
 
 function searchCity(city) {
-  event.preventDefault();
   let apiKey = "78732a96a197e49d1d6f4f38b52eb633";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -137,3 +140,5 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+searchCity("Lisbon");
