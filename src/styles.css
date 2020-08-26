@@ -2,6 +2,7 @@ body {
   margin-bottom: 40px;
   margin-top: 40px;
 }
+
 .btn-warning {
   border-radius: 20px;
   margin-bottom: 10px;
@@ -14,15 +15,12 @@ h2 {
   color: #e02884;
 }
 .fa-temperature-high {
-  color: orange;
   padding-right: 10px;
 }
 .fa-temperature-low {
-  color: blue;
   padding-right: 10px;
 }
 .fa-wind {
-  color: grey;
   position: relative;
   left: 10px;
 }
@@ -64,8 +62,14 @@ h2 {
 .card-text {
   text-align: center;
 }
-.card {
+.card-body {
   background-color: lightblue;
+  border: 1px solid;
+  color: black;
+  border-radius: 10px;
+}
+.card {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
 .container {
   max-width: 850px;
@@ -77,10 +81,7 @@ h2 {
   position: relative;
   top: -20px;
 }
-.card {
-  border: 1px solid;
-  color: black;
-}
+
 .source-code {
   text-align: center;
 }
