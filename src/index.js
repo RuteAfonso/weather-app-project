@@ -97,10 +97,12 @@ function handleInput(event) {
 
 function searchLocation(position) {
   let apiKey = "78732a96a197e49d1d6f4f38b52eb633";
-  let apiUrl =
-    "https://api.openweathermap.org/data/2.5/weather?lat=38.7729508&lon=-9.1105767&appid=78732a96a197e49d1d6f4f38b52eb633&units=metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=78732a96a197e49d1d6f4f38b52eb633&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(showUpdatedTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getCurrentLocation(event) {
